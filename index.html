@@ -14,7 +14,7 @@
   <header>
     <nav>
         <ul class='nav-bar'>
-            <li class='logo'><a href='#'><img src='images/logo.svg'/></a></li>
+            <li class='logo'><a href='#'><img src='images/18.svg'/></a></li>
             <input type='checkbox' id='check' />
             <span class="menu">
                 <li><a href="#hero">Home</a></li>
@@ -172,33 +172,32 @@ readMore.addEventListener('click', () => {
     that combine sustainability with modern solutions.
   </p>
   
-  <!-- Cards -->
   <div class="cards-container">
-    <div class="card">
+    <div class="card" onclick="redirectToCategory('ac')">
       <div class="logo-container">
         <img src="images/ac.svg" alt="Air Conditioner">
       </div>
       <h3>Air Conditioner</h3>
       <p>An air conditioner is a device that regulates indoor temperature and humidity.</p>
     </div>
-
-    <div class="card">
+  
+    <div class="card" onclick="redirectToCategory('water-purifier')">
       <div class="logo-container">
         <img src="images/wf.svg" alt="Water Purifier">
       </div>
       <h3>Water Purifier</h3>
       <p>A water purifier is a device designed to remove contaminants from water.</p>
     </div>
-
-    <div class="card">
+  
+    <div class="card" onclick="redirectToCategory('solar-pumps')">
       <div class="logo-container">
         <img src="images/shp.svg" alt="Solar Heat Pump">
       </div>
       <h3>Solar Heat Pump</h3>
       <p>A SAHP is a machine integrating a heat pump and thermal solar panels.</p>
     </div>
-
-    <div class="card">
+  
+    <div class="card" onclick="redirectToCategory('ups')">
       <div class="logo-container">
         <img src="images/ups.svg" alt="UPS">
       </div>
@@ -206,7 +205,7 @@ readMore.addEventListener('click', () => {
       <p>An uninterruptible power supply (UPS) is a type of continual power system.</p>
     </div>
   </div>
-
+  
   <!-- View All Button -->
   <div class="button-container">
     <button onclick="redirect('products.html')">View All</button>
@@ -214,11 +213,16 @@ readMore.addEventListener('click', () => {
 </section>
 
 <script>
-  // JavaScript function to handle redirection
+  // Redirect to product.html with category query parameter
+  function redirectToCategory(category) {
+    window.location.href = `products.html?category=${category}`;
+  }
+
   function redirect(page) {
     window.location.href = page;
   }
 </script>
+
 
   <!-- Services Section -->
 <section class="services-section" id="services">
@@ -230,7 +234,7 @@ readMore.addEventListener('click', () => {
   <div class="services-container">
     <div class="service-card">
       <div class="logo-card">
-        <img src="images/s1.png" alt="Services Icon">
+        <img src="images/1.png" alt="Services Icon">
       </div>
       <h4>Services</h4>
       <p class="service-description">
@@ -242,7 +246,7 @@ readMore.addEventListener('click', () => {
     </div>
     <div class="service-card">
       <div class="logo-card">
-        <img src="images/s2.png" alt="AMC Icon">
+        <img src="images/2.png" alt="AMC Icon">
       </div>
       <h4>AMC</h4>
       <p class="service-description">
@@ -254,7 +258,7 @@ readMore.addEventListener('click', () => {
     </div>
     <div class="service-card">
       <div class="logo-card">
-        <img src="images/s3.png" alt="Sales Icon">
+        <img src="images/3.png" alt="Sales Icon">
       </div>
       <h4>Sales</h4>
       <p class="service-description">
@@ -312,12 +316,10 @@ document.querySelectorAll('.read-more-btn').forEach((button, index) => {
           },
           {
             name: "DHL",
-            logo: "./images/Dhl.png",
+            logo: "./images/dhl.png",
             description: "DHL provides world-class logistics and supply chain services globally."
           },
           {
-
-        
             name: "IFB",
             logo: "./images/ifb.png",
             description: "IFB revolutionizes home appliances with cutting-edge technology."
@@ -336,7 +338,7 @@ document.querySelectorAll('.read-more-btn').forEach((button, index) => {
         companies: [
           {
             name: "Prestige",
-            logo: "./images/PrestigeLogo.png",
+            logo: "./images/prestige.png",
             description: "Prestige is known for premium real estate development and iconic projects."
           },
           {
@@ -502,7 +504,7 @@ document.querySelectorAll('.read-more-btn').forEach((button, index) => {
   <footer>
     <div class="footer-container" id="footer">
       <div class="footer-section logo">
-        <img src="images/logo.svg" alt="Logo">
+        <img src="images/18.svg" alt="Logo">
         <h2>Ganga Cooling Solutions</h2>
         <p>Ganga Cooling Solutions provides efficient cooling products and exceptional services.</p>
         <br>

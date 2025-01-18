@@ -66,11 +66,16 @@ const productData = {
 // Render Products
 function renderProducts(category) {
   const productContainer = document.getElementById("products");
-  productContainer.innerHTML = "";
+  productContainer.innerHTML = ""; // Clear the container
 
-  productData[category].forEach((product) => {
+  productData[category].forEach((product, index) => {
     const productCard = document.createElement("div");
     productCard.classList.add("product-card");
+
+    // Add a delay to each card
+    setTimeout(() => {
+      productCard.classList.add("morph-in");
+    }, index * 150); // Stagger animation for each card
 
     const truncatedDescription = product.description.slice(0, 200); // Truncate description
     const fullDescription = product.description; // Full description
@@ -98,12 +103,36 @@ function toggleDescription(element, fullDescription, truncatedDescription) {
   }
 }
 
-// Handle Category Clicks
+// Product Data (unchanged)
+// Render Products Function (unchanged)
+
+// Handle Category Clicks (Highlight & Render Products)
 function handleCategoryClick(category, element) {
   document.querySelectorAll(".category").forEach((btn) => btn.classList.remove("active"));
   element.classList.add("active");
-  renderProducts(category);
+
+  const productContainer = document.getElementById("products");
+  productContainer.classList.add("morph-out");
+
+  setTimeout(() => {
+    renderProducts(category);
+    productContainer.classList.remove("morph-out");
+    productContainer.classList.add("morph-in");
+
+    // Remove the fade-in class after the animation
+    setTimeout(() => productContainer.classList.remove("morph-in"), 800);
+  }, 500); // Match the transition time in CSS
 }
 
-// Initial Render for AC Category
-renderProducts("ac");
+// On Page Load: Render Products for Default or Queried Category
+function loadCategoryFromQuery() {
+  const params = new URLSearchParams(window.location.search);
+  const category = params.get('category') || 'ac'; // Default to 'ac' if no category is specified
+  const categoryElement = document.querySelector(`.category[data-category="${category}"]`);
+  if (categoryElement) {
+    handleCategoryClick(category, categoryElement);
+  }
+}
+
+// Initial Render
+window.onload = loadCategoryFromQuery;

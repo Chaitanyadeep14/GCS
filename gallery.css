@@ -29,8 +29,11 @@
 }
 
 .logo img {
-  width: 88px;
-  margin-top: 2px;
+  width: 320px;
+  margin-top: -122px;
+  position: absolute;
+  left: 0;
+  margin-left: -10px;
 }
 
 .menu {
@@ -77,7 +80,7 @@
 .open-menu,
 .close-menu {
   position: absolute;
-  color: #1F509A;
+  color: #327dff;
   cursor: pointer;
   font-size: 1.5rem;
   display: none;
@@ -107,11 +110,11 @@
   }
 
   .logo img {
-    width: 75px; /* Scale down logo */
+    width: 310px; /* Scale down logo */
   }
 
   .menu li {
-    padding-left: 40px; /* Reduced padding for menu items */
+    padding-left: 25px; /* Reduced padding for menu items */
   }
 
   .menu li a {
@@ -130,28 +133,27 @@
 /* Medium Screens (992px and below) */
 @media (max-width: 992px) {
   .nav-bar {
-    padding: 15px 20px; /* Further reduced padding */
-    height: 55px; /* Reduced height */
+    padding: 10px 15px;
+    height: 55px; /* Auto height for extra small screens */
   }
 
   .logo img {
-    width: 70px; /* Scale down logo */
-  }
-
-  .menu li {
-    padding-left: 30px; /* Further reduced padding */
+    width: 175px; /* Smaller logo */
+    margin-top: -70px;
   }
 
   .menu li a {
-    font-size: 14.5px; /* Reduced font size */
+    font-size: 15px;
+    font-weight: 400;
   }
 
   .open-menu {
-    display: none;
+    right: 10px;
   }
 
   .close-menu {
-    display: none;
+    top: 5px;
+    right: 5px;
   }
 }
 
@@ -160,12 +162,16 @@
   .nav-bar {
     flex-direction: column; /* Stack navbar items vertically */
     padding: 10px 15px; /* Reduced padding */
-    height: auto; /* Auto height */
+    height: 70px; /* Auto height */
   }
 
-  .logo img {
-    width: 60px; /* Smaller logo */
-  }
+.logo img {
+  width: 320px;
+  margin-top: -100px;
+  position: absolute;
+  left: 0;
+  margin-left: -10px;
+}
 
   .menu {
     flex-direction: column; /* Stack menu items vertically */
@@ -187,13 +193,15 @@
   }
 
   .menu li a {
-    font-size: 14px; /* Smaller font size for mobile */
+    font-size: 18px; /* Smaller font size for mobile */
     margin-top: 10px;
   }
 
   .open-menu {
     display: block; /* Show hamburger menu */
     right: 10px;
+    font-size: 40px;
+    margin-right: 10px;
   }
 
   .close-menu {
@@ -201,6 +209,7 @@
     top: 10px;
     right: 10px;
     display: block; /* Show close menu button */
+    font-size: 40px;
   }
 
   #check:checked ~ .menu {
@@ -212,11 +221,12 @@
 @media (max-width: 576px) {
   .nav-bar {
     padding: 10px 15px;
-    height: auto; /* Auto height for extra small screens */
+    height: 55px; /* Auto height for extra small screens */
   }
 
   .logo img {
-    width: 50px; /* Smaller logo */
+    width: 220px; /* Smaller logo */
+    margin-top: -67px;
   }
 
   .menu li a {
@@ -226,11 +236,13 @@
 
   .open-menu {
     right: 10px;
+    font-size: 32px;
   }
 
   .close-menu {
     top: 5px;
     right: 5px;
+    font-size: 32px;
   }
 }
 
@@ -384,7 +396,17 @@ footer {
   margin-bottom: 35px;
 }
 
-.footer-section h2,
+.footer-section.logo img{
+  margin-top: -95px;
+  margin-left: -35px;
+}
+
+.footer-section h2{
+  font-size: 20px;
+  color: #3B82F6; /* Dark color for headings */
+  margin-top: 95px;
+}
+
 .footer-section h3 {
   font-size: 20px;
   color: #3B82F6; /* Dark color for headings */
@@ -529,7 +551,9 @@ footer {
   .footer-section {
     margin-bottom: 20px; /* Add spacing between sections */
   }
-
+.footer-section.logo img {
+  margin-right:20px;
+}
   .footer-section.location iframe {
     width: 300px;
     height: 200px; /* Reduce size for smaller screens */
@@ -543,6 +567,12 @@ footer {
 
   .footer-section ul li a {
     font-size: 17px; /* Adjust font size for links */
+  }
+
+  .footer-section.logo img{
+    width: 350px;
+    margin-left: 275px;
+    margin-bottom: -57px;
   }
 
   .social-icons {
@@ -582,6 +612,9 @@ footer {
 
   .footer-section {
     margin-bottom: 15px; /* Add spacing between sections */
+  }
+  .footer-section.logo img{
+    margin-left: 200px;
   }
 
   .footer-section.location iframe {
@@ -629,12 +662,25 @@ footer {
 
   .footer-section {
     margin-bottom: 10px; /* Reduce spacing between sections */
+    margin-top: 45px;
   }
-
+  .footer-section.logo img{
+    width: 300px;
+    margin-left: 25px;
+    margin-top: -80px;
+  }
   .footer-section.location iframe {
     width: 200px;
     height: 150px; /* Smallest size for the map */
     margin: 10px auto; /* Center the map */
+  }
+
+  .footer-section.links h3{
+    margin-right: 45px;
+  }
+
+  .footer-section.links ul{
+    margin-right: 45px;
   }
 
   .footer-section h2,
